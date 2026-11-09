@@ -180,4 +180,8 @@ setTimeout(()=>{if(!LINEUSER&&!LINEERR)lerr("応答がありません。LINEア�
 document.head.appendChild(sc)}
 initLine();
 applyTheme();render();
+// メニューページからの直リンク: ?bean=商品ID(&roast=0浅/1中/2深)
+(function(){try{var q=new URLSearchParams(location.search),id=q.get("bean");
+if(id&&P.some(function(x){return x.id===id})){openP(id);var r=parseInt(q.get("roast"),10);
+if(r>=0&&r<ROASTS.length){cur.r=r;drawP()}}}catch(e){console.error(e)}})();
 </script></body></html>
